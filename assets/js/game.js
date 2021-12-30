@@ -77,7 +77,6 @@ for(var i = 0; i < enemyNames.length; i++) {
     //welcome message if player is still alive
     if (playerHealth > 0) {
         window.alert("Welcome to Robot Gladiators, Round " + (i + 1));
-    }
 
     //pick new enemy to fight based on place in array
     var pickedEnemyName = enemyNames[i]
@@ -90,9 +89,10 @@ for(var i = 0; i < enemyNames.length; i++) {
 
     //pass the pickedEnemyName variable's value into the fight function, where it will assume the value of the enemyName parameter
     fight(pickedEnemyName);
+    }
+    else{
+        window.alert("You have lost your robot in battle! Game Over!");
+        break;
+    }
 } 
 //if player is ded
-else {
-    window.alert("You have lost your robot in battle! Game Over!");
-    break;
-}
