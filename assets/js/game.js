@@ -1,6 +1,16 @@
+var getPlayerName = function() {
+    var name = "";
+    while (name === "" || name === null) {
+        name = prompt("What is your robot's name?");
+    }
+
+    console.log("Your robot's name is " + name);
+}
+
+
 //Player variables
 var playerInfo = {
-    name: window.prompt("What is your robot's name?"),
+    name: getPlayerName(),
     health: 100,
     attack: 10,
     money: 10,
@@ -126,6 +136,7 @@ var startGame = function() {
         //welcome message if player is still alive
         if (playerInfo.health > 0) {
             window.alert("Welcome to Robot Gladiators, Round " + (i + 1));
+            debugger;
 
         //pick new enemy to fight based on place in array
             var pickedEnemyObj = enemyInfo[i]
